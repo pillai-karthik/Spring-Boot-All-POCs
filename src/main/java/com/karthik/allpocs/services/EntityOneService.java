@@ -8,4 +8,11 @@ public interface EntityOneService {
 
     public List<EntityOne> getEntityOnes();
 
+    EntityOne getEntityOneById(int entityId);
+
+    EntityOne addEntityOne(EntityOne entityOne);
+
+    EntityOne editEntityOneById(int entityId, EntityOne entityOne);
+
+    EntityOne deleteEntityOneById(int entityId);
 }

@@ -21,4 +21,33 @@ public class EntityOneServiceImpl implements EntityOneService{
     public List<EntityOne> getEntityOnes() {
         return entityOneList;
     }
+
+    @Override
+    public EntityOne getEntityOneById(int entityId) {
+
+        if(entityOneList.size()>entityId) {
+            return entityOneList.get(entityId);
+        }else{
+            return null;
+        }
+    }
+
+    @Override
+    public EntityOne addEntityOne(EntityOne entityOne) {
+        entityOneList.add(entityOne);
+        return entityOne;
+    }
+
+    @Override
+    public EntityOne editEntityOneById(int entityId, EntityOne entityOneNew) {
+        entityOneList.set(entityId,entityOneNew);
+        return entityOneNew;
+    }
+
+    @Override
+    public EntityOne deleteEntityOneById(int entityId) {
+        EntityOne deletedEntityOne = entityOneList.get(entityId);
+        entityOneList.remove(entityId);
+        return deletedEntityOne;
+    }
 }
