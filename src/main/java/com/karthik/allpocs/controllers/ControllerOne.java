@@ -2,6 +2,7 @@ package com.karthik.allpocs.controllers;
 
 import com.karthik.allpocs.entities.EntityOne;
 import com.karthik.allpocs.services.EntityOneService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("ControllerOne")
+@SecurityRequirement(name = "Bearer Authentication")
 public class ControllerOne {
 
     @Autowired
